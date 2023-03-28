@@ -1,0 +1,26 @@
+VAR @sum
+PUSH 0
+POP @sum
+PUSH 1
+PUSH 2
+LINK @1
+DUP
+PUSH 2
+MOD
+PUSH 0
+EQ
+BZ @2
+DUP
+GET @sum
+ADD
+POP @sum
+LINK @2
+DUP_D
+ADD
+DUP
+PUSH 4000000
+GR
+BZ @1
+GET @sum
+POP @var0
+EXIT

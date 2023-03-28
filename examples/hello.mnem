@@ -1,0 +1,24 @@
+PUSH d
+PUSH l
+PUSH r
+PUSH o
+PUSH w
+PUSH _
+PUSH o
+PUSH l
+PUSH l
+PUSH e
+PUSH h
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+POP @var1
+EXIT

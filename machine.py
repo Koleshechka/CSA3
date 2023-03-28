@@ -1,7 +1,7 @@
 import sys
 import logging
 from enum import Enum
-from isa import Opcode
+from constants.isa import Opcode
 
 
 class Sel_tos(Enum):
@@ -216,19 +216,15 @@ class ControlUnit:
         elif opcode == Opcode.BZ:
             if self.dataPath.zero():
                 self.latch_IP()
-
             else:
                 self.latch_IP(Sel_ip.INC)
-
             self.tick()
             self.dataPath.latch_SP(Sel_sp.DEC)
         elif opcode == Opcode.BNZ:
             if not self.dataPath.zero():
                 self.latch_IP()
-
             else:
                 self.latch_IP(Sel_ip.INC)
-
             self.tick()
             self.dataPath.latch_SP(Sel_sp.DEC)
         else:
@@ -281,7 +277,7 @@ class DataPath:
             Opcode.DIV: lambda left, right: left / right,
             Opcode.MOD: lambda left, right: left % right,
             Opcode.ADD: lambda left, right: left + right,
-            Opcode.SUB: lambda left, right: right - left,
+            Opcode.SUB: lambda left, right: left - right,
             Opcode.MUL: lambda left, right: left * right,
             Opcode.GR: lambda left, right: (int)(left > right),
             Opcode.LESS: lambda left, right: (int)(left < right),
@@ -345,7 +341,7 @@ class DataPath:
         if self.DP == 0:
             self.output_buffer.append(self.stack[self.SP])  # MEMORY-MAPPED OUTPUT
         elif self.DP == 1:
-            self.output_buffer.append(self.stack[self.SP])  # MEMORY-MAPPED CHAR OUTPUT
+            self.output_buffer.append(chr(self.stack[self.SP]))  # MEMORY-MAPPED CHAR OUTPUT
         else:
             self.mem[self.DP] = self.stack[self.SP]
 

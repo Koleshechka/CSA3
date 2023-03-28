@@ -1,0 +1,7 @@
+LINK @1
+GET @var2
+DUP
+POP @var0
+PUSH 0
+EQ
+BZ @1

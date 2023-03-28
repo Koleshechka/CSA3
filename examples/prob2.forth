@@ -3,7 +3,6 @@ variable sum
 sum !
 1
 2
-dup
 begin
 dup
 2
@@ -22,7 +21,6 @@ dup
 4000000
 >
 until
-drop
 sum @
 .
 exit
