@@ -245,6 +245,7 @@ class ControlUnit:
 
         return f"{action} {state}"
 
+
 def parse_opcode_from_int(val):
     for opcode in Opcode:
         if opcode.value == val:
