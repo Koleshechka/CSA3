@@ -1,3 +1,8 @@
+# pylint: disable=missing-class-docstring, missing-function-docstring, missing-module-docstring
+# pylint: disable=line-too-long
+# pylint: disable=import-error
+# pylint: disable=too-many-branches, too-many-statements
+
 import sys
 import re
 from constants.isa import a_operations, operations, variable_op, Opcode
@@ -6,24 +11,28 @@ from constants.isa import a_operations, operations, variable_op, Opcode
 def validate(line, variables_dict, var_counter):
     words = list(line.split(' '))
 
-    if len(words) > 2: raise AssertionError
-    elif re.fullmatch(r'[-+]?\d+', words[0]) or re.fullmatch(r'\D{1}', words[0]):
+    if len(words) > 2:
+        raise AssertionError
+    if re.fullmatch(r'[-+]?\d+', words[0]) or re.fullmatch(r'\D{1}', words[0]):
         if len(words) > 1:
             raise AssertionError
     elif words[0] == "variable":
-        if len(words) != 2: raise AssertionError
-        elif words[1] in variables_dict.keys(): raise AssertionError
-        else:
-            var_counter += 1
-            variables_dict.update({words[1]: var_counter})
-    elif words[0] not in operations and words[0] not in variables_dict.keys() and words[0] not in a_operations: raise AssertionError
-    elif (words[0] in operations or words[0] in a_operations) and len(words) > 1: raise AssertionError
+        if len(words) != 2:
+            raise AssertionError
+        if words[1] in variables_dict.keys():
+            raise AssertionError
+        var_counter += 1
+        variables_dict.update({words[1]: var_counter})
+    elif words[0] not in operations and words[0] not in variables_dict.keys() and words[0] not in a_operations:
+        raise AssertionError
+    elif (words[0] in operations or words[0] in a_operations) and len(words) > 1:
+        raise AssertionError
 
     elif words[0] in variables_dict.keys():
-        if len(words) < 2 : raise AssertionError
-        elif words[1] not in variable_op: raise AssertionError
-
-
+        if len(words) < 2:
+            raise AssertionError
+        if words[1] not in variable_op:
+            raise AssertionError
 
 
 def parse(line, variable_dict, link_counter, link_dict, if_counter):
@@ -116,16 +125,17 @@ def translate(source):
     raw_code = list(source.split('\n'))
     code = []
     mnem = []
-    variables_dict = dict()
+    variables_dict = {}
     link_counter = 0
     var_counter = 2
-    link_dict = dict()
+    link_dict = {}
     if_counter = 0
     if_line = -1
     line_counter = 0
     for line in raw_code:
         validate(line, variables_dict, var_counter)
-        parsed_line, mnem_line, link_counter, if_counter = parse(line, variables_dict, link_counter, link_dict, if_counter)
+        parsed_line, mnem_line, link_counter, if_counter = parse(line, variables_dict, link_counter, link_dict,
+                                                                 if_counter)
         if if_counter > 0:
             if_line = line_counter
             if_counter = 0
@@ -141,9 +151,7 @@ def translate(source):
     return code, mnem, line_counter
 
 
-
 def main(args):
-
     assert len(args) == 3, \
         "Wrong arguments: translator.py <forth_file> <target_file> <mnem_file>"
 
@@ -162,10 +170,10 @@ def main(args):
             if instr[1]:
                 file.write(instr[1])
 
-    with open(mnem_file, "w") as file:
+    with open(mnem_file, "w", encoding="utf-8") as file:
         for line in mnem:
             file.write(line[0].name)
-            if (line[1]):
+            if line[1]:
                 file.write(" " + str(line[1]))
             file.write("\n")
 

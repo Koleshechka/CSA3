@@ -1,0 +1,95 @@
+source: |-
+  begin
+  #
+  dup
+  .
+  0
+  =
+  until
+input: |-
+  dlrow_olleH
+code: |
+  LINK @1
+  GET @var2
+  DUP
+  POP @var0
+  PUSH 0
+  EQ
+  BZ @1
+output: |
+  source LoC: 7 code instr: 7
+  ============================================================
+  Hello_world
+  instr_counter:  66 ticks: 145
+
+log: |
+  DEBUG:root:GET 2 TICK: 0, IP: 0, ADDR: 3, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 3, IP: 1, ADDR: 2, TOS: H, DS: 0
+  DEBUG:root:POP 0 TICK: 5, IP: 2, ADDR: 2, TOS: H, DS: H
+  DEBUG:root:PUSH 0 TICK: 8, IP: 3, ADDR: 0, TOS: H, DS: 0
+  DEBUG:root:EQ 0 TICK: 10, IP: 4, ADDR: 0, TOS: 0, DS: H
+  DEBUG:root:BZ 0 TICK: 12, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 13, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 16, IP: 1, ADDR: 2, TOS: e, DS: 0
+  DEBUG:root:POP 0 TICK: 18, IP: 2, ADDR: 2, TOS: e, DS: e
+  DEBUG:root:PUSH 0 TICK: 21, IP: 3, ADDR: 0, TOS: e, DS: 0
+  DEBUG:root:EQ 0 TICK: 23, IP: 4, ADDR: 0, TOS: 0, DS: e
+  DEBUG:root:BZ 0 TICK: 25, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 26, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 29, IP: 1, ADDR: 2, TOS: l, DS: 0
+  DEBUG:root:POP 0 TICK: 31, IP: 2, ADDR: 2, TOS: l, DS: l
+  DEBUG:root:PUSH 0 TICK: 34, IP: 3, ADDR: 0, TOS: l, DS: 0
+  DEBUG:root:EQ 0 TICK: 36, IP: 4, ADDR: 0, TOS: 0, DS: l
+  DEBUG:root:BZ 0 TICK: 38, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 39, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 42, IP: 1, ADDR: 2, TOS: l, DS: 0
+  DEBUG:root:POP 0 TICK: 44, IP: 2, ADDR: 2, TOS: l, DS: l
+  DEBUG:root:PUSH 0 TICK: 47, IP: 3, ADDR: 0, TOS: l, DS: 0
+  DEBUG:root:EQ 0 TICK: 49, IP: 4, ADDR: 0, TOS: 0, DS: l
+  DEBUG:root:BZ 0 TICK: 51, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 52, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 55, IP: 1, ADDR: 2, TOS: o, DS: 0
+  DEBUG:root:POP 0 TICK: 57, IP: 2, ADDR: 2, TOS: o, DS: o
+  DEBUG:root:PUSH 0 TICK: 60, IP: 3, ADDR: 0, TOS: o, DS: 0
+  DEBUG:root:EQ 0 TICK: 62, IP: 4, ADDR: 0, TOS: 0, DS: o
+  DEBUG:root:BZ 0 TICK: 64, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 65, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 68, IP: 1, ADDR: 2, TOS: _, DS: 0
+  DEBUG:root:POP 0 TICK: 70, IP: 2, ADDR: 2, TOS: _, DS: _
+  DEBUG:root:PUSH 0 TICK: 73, IP: 3, ADDR: 0, TOS: _, DS: 0
+  DEBUG:root:EQ 0 TICK: 75, IP: 4, ADDR: 0, TOS: 0, DS: _
+  DEBUG:root:BZ 0 TICK: 77, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 78, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 81, IP: 1, ADDR: 2, TOS: w, DS: 0
+  DEBUG:root:POP 0 TICK: 83, IP: 2, ADDR: 2, TOS: w, DS: w
+  DEBUG:root:PUSH 0 TICK: 86, IP: 3, ADDR: 0, TOS: w, DS: 0
+  DEBUG:root:EQ 0 TICK: 88, IP: 4, ADDR: 0, TOS: 0, DS: w
+  DEBUG:root:BZ 0 TICK: 90, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 91, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 94, IP: 1, ADDR: 2, TOS: o, DS: 0
+  DEBUG:root:POP 0 TICK: 96, IP: 2, ADDR: 2, TOS: o, DS: o
+  DEBUG:root:PUSH 0 TICK: 99, IP: 3, ADDR: 0, TOS: o, DS: 0
+  DEBUG:root:EQ 0 TICK: 101, IP: 4, ADDR: 0, TOS: 0, DS: o
+  DEBUG:root:BZ 0 TICK: 103, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 104, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 107, IP: 1, ADDR: 2, TOS: r, DS: 0
+  DEBUG:root:POP 0 TICK: 109, IP: 2, ADDR: 2, TOS: r, DS: r
+  DEBUG:root:PUSH 0 TICK: 112, IP: 3, ADDR: 0, TOS: r, DS: 0
+  DEBUG:root:EQ 0 TICK: 114, IP: 4, ADDR: 0, TOS: 0, DS: r
+  DEBUG:root:BZ 0 TICK: 116, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 117, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 120, IP: 1, ADDR: 2, TOS: l, DS: 0
+  DEBUG:root:POP 0 TICK: 122, IP: 2, ADDR: 2, TOS: l, DS: l
+  DEBUG:root:PUSH 0 TICK: 125, IP: 3, ADDR: 0, TOS: l, DS: 0
+  DEBUG:root:EQ 0 TICK: 127, IP: 4, ADDR: 0, TOS: 0, DS: l
+  DEBUG:root:BZ 0 TICK: 129, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 130, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:DUP 0 TICK: 133, IP: 1, ADDR: 2, TOS: d, DS: 0
+  DEBUG:root:POP 0 TICK: 135, IP: 2, ADDR: 2, TOS: d, DS: d
+  DEBUG:root:PUSH 0 TICK: 138, IP: 3, ADDR: 0, TOS: d, DS: 0
+  DEBUG:root:EQ 0 TICK: 140, IP: 4, ADDR: 0, TOS: 0, DS: d
+  DEBUG:root:BZ 0 TICK: 142, IP: 5, ADDR: 0, TOS: 0, DS: 0
+  DEBUG:root:GET 2 TICK: 143, IP: 0, ADDR: 0, TOS: 0, DS: 0
+  WARNING:root:Input buffer is empty!
+  INFO:root:output_buffer: 'Hello_world'
+
