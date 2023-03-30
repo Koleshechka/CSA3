@@ -245,6 +245,12 @@ class ControlUnit:
 
         return f"{action} {state}"
 
+def parse_opcode_from_int(val):
+    for opcode in Opcode:
+        if opcode.value == val:
+            return opcode
+    return None
+
 
 class DataPath:
     def __init__(self, data_memory_size, stack_size, input_buffer):
