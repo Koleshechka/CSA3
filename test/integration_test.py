@@ -38,7 +38,7 @@ import translator
 # - code -- машинный код на выходе из транслятора
 # - output -- стандартный вывод программ
 # - log -- журнал программы
-@pytest.mark.golden_test("golden/*.yml")
+@pytest.mark.golden_test("*.yml")
 def test_whole_by_golden(golden, caplog):
     # Установим уровень отладочного вывода на DEBUG
     caplog.set_level(logging.DEBUG)
