@@ -123,16 +123,11 @@ class ControlUnit:
                     elif command == Opcode.GET.value:
                         arg = file.read(4)
                         arg = self.var_linker.get(int.from_bytes(arg, 'big'))
-                    self.create_command_from_bytes(self.parse_opcode_from_int(command), arg)
+                    self.create_command_from_bytes(parse_opcode_from_int(command), arg)
                 else:
-                    self.create_command_from_bytes(self.parse_opcode_from_int(command), arg)
+                    self.create_command_from_bytes(parse_opcode_from_int(command), arg)
                     break
 
-    def parse_opcode_from_int(self, val):
-        for opcode in Opcode:
-            if opcode.value == val:
-                return opcode
-        return None
 
     def create_command_from_bytes(self, opcode, arg):  # читает одну команду и возвращает
         # конвертировать биты в команду
