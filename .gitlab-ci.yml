@@ -4,6 +4,7 @@ ab3-example:
     name: python-tools
     entrypoint: [""]
   script:
+    - pip install pytest-golden
     - python3-coverage run -m pytest --verbose
     - find . -type f -name "*.py" | xargs -t python3-coverage report
     - find . -type f -name "*.py" | xargs -t pep8 --ignore=E501,E701
