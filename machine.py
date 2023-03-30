@@ -128,8 +128,7 @@ class ControlUnit:
                     self.create_command_from_bytes(parse_opcode_from_int(command), arg)
                     break
 
-
-    def create_command_from_bytes(self, opcode, arg):  # читает одну команду и возвращает
+    def create_command_from_bytes(self, opcode, arg):
         # конвертировать биты в команду
         command = {}
         command["opcode"] = opcode
