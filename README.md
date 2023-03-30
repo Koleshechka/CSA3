@@ -240,6 +240,7 @@ INFO:root:output_buffer: 'Hello world'
 Hello world
 instr_counter:  66 ticks: 145
 
+
 ```
 
 | ФИО               | алг.  | LoC | code байт | code инстр. | инстр. | такт. | вариант |
